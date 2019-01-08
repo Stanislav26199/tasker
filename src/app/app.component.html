@@ -1,0 +1,51 @@
+<!--<div class="container mt-2">-->
+<!--<div class="row">-->
+  <!--<div class="col-6" *ngIf="countCards == 0">-->
+    <!--<label>Enter Count Cards:</label>-->
+    <!--&lt;!&ndash;<input type="text" class = "col-2 form-control" (input)="changeColor($event.target.value)" (keydown.enter)="myColor = 'Yellow'" (keydown.alt.enter)="myColor = 'White'">&ndash;&gt;-->
+    <!--<input type="text" class = "col-2 form-control" #enterCard [disabled]="countCards != 0" (keydown.alt.enter)="SubmitColors()">-->
+    <!--<button type="button" class="btn btn-primary mt-2 mr-2" (click)="enterCountCards(enterCard.value); enterCard.value = ''" [disabled]="countCards != 0">Enter Count Cards!</button>-->
+
+  <!--</div>-->
+
+  <!--<div class="col-6" *ngIf="countCards != 0">-->
+    <!--<h2>Count colors: {{countCards}}</h2>-->
+    <!--<label>Enter Color:</label>-->
+    <!--<input type="text" class = "col-2 form-control" #enterColor [disabled]="countCards == 0">-->
+    <!--<button type="button" class="btn btn-outline-primary mt-2 mr-2" (click)="inputColor(enterColor.value); enterColor.value = ''">Enter color</button>-->
+    <!--<button type="button" class="btn btn-outline-danger mt-2 mr-2" (click)="RemoveAllColors()" >Remove All</button>-->
+    <!--<button type="button" class="btn btn-outline-danger mt-2" (click)="removeCountCards()" [disabled]="countCards == 0">Clear Count cards!</button>-->
+  <!--</div>-->
+
+
+  <!--<div class="col-6" >-->
+    <!--<app-cards [colors]="colorList" (selectedColor)="displaySelectedColor($event)"></app-cards>-->
+  <!--</div>-->
+
+  <!--<div class="col-12">-->
+    <!--<h1 style="text-align: center;">{{selectedColor}}</h1>-->
+  <!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-navbar (showCreateMode)="showMode($event)" (showTaskList)="showMode($event)"></app-navbar>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-4">
+      <app-createmode (newTask)="pushTask($event)" *ngIf="showCreateMode"></app-createmode>
+      <app-menu *ngIf="showTaskList"></app-menu>
+    </div>
+
+    <div class="col-8">
+      <app-list [taskList]="listtask" [showSearch]="showTaskList"></app-list>
+    </div>
+  </div>
+</div>

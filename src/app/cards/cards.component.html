@@ -1,0 +1,10 @@
+<div class="zone" *ngFor="let color of colorList">
+
+  <div class="card text-white mb-3" [ngClass]="'bg-'+color"  style="max-width: 18rem;" (click)="selectColor(color)">
+    <div class="card-header">Header Card</div>
+    <div class="card-body">
+      <h5 class="card-title">Color: {{color}}</h5>
+    </div>
+  </div>
+
+</div>

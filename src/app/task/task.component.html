@@ -1,0 +1,14 @@
+
+  <div class="card text-white mb-3" [ngClass]="'bg-' + bodyColor" >
+    <div class="card-header">Заголовок: {{datatask.header}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="deleteTask()">
+        <span aria-hidden="true">&times;</span>
+      </button></div>
+    <div class="card-body">
+      <h5 class="card-title">{{datatask.notes}}</h5>
+      <p>{{datatask.date}}</p>
+    </div>
+    <div class="card-footer">
+      {{datatask.type}}
+    </div>
+  </div>

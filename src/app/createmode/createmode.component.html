@@ -1,0 +1,31 @@
+<form>
+  <div class="form-group">
+    <label>Введите заголовок:</label>
+    <input type="text" class="form-control"   placeholder="Заголовок..." #enterHeader>
+  </div>
+  <div class="form-group">
+    <label>Опишите задачу:</label>
+    <textarea class="form-control" rows="3" #enterNotes placeholder="Заметки..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Выбирете категорию:</label>
+    <select class="form-control" #selectedType>
+      <option>Выбирете категорию</option>
+      <option *ngFor="let type of category">{{type}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Дата выполнения:</label>
+    <input type="text"
+           class="form-control"
+           #dp="bsDatepicker"
+           bsDatepicker
+           [bsValue]="bsValue"
+           placement="top"
+           [bsConfig]="bsConfig">
+  </div>
+
+  <button type="button" class="btn btn-info" (click)="addTask(enterHeader.value, enterNotes.value, selectedType.value);
+   enterNotes.value=''; enterHeader.value='';">Добавить задачу</button>
+</form>
